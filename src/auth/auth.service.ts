@@ -5,7 +5,7 @@ import { User } from 'src/schemas/User.schemas';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { SignUpDto } from './dto/signUp.dto';
-import { LogInDto } from './dto/login.dto';
+import { SignInDto } from './dto/signIn.dto';
 
 @Injectable()
 export class AuthService {
@@ -44,8 +44,8 @@ export class AuthService {
     return { token };
   }
 
-  async login(logInDto: LogInDto): Promise<{ token: string, email: string, name: string }> {
-    const { email, password } = logInDto;
+  async signIn(signInDto: SignInDto): Promise<{ token: string, email: string, name: string }> {
+    const { email, password } = signInDto;
     if (!email || !password) throw new BadRequestException();
     const user = await this.userModel.findOne({ email });
     if (!user) {
