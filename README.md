@@ -1,3 +1,12 @@
+**Insert .env file on root with the following fields before running the service.**
+
+```
+JWT_SECRET=some-random-code
+DB_URL=mongodb+srv://<username>:<pwd>@<connection-url>
+```
+**Any fresh mongodb instance would work. Thank you**
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
